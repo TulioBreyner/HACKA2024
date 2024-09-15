@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="CSS/buscaArtigos.css">
 </head>
 <body>
+
     <header>
-        <div class="logo">SiteLogo</div>
-        <nav>
-            <a href="perfil.html">Perfil</a>
-            <a href="login.html">Logout</a>
-        </nav>
+        <div class="header-container">
+          <div class="logo">
+            <img src="logo.png" alt="Logo do Site"> <!-- Substitua 'logo.png' pelo caminho da sua imagem de logo -->
+          </div>
+          <nav class="nav">
+            <a href="login.html" id="logout-link">Logout</a>
+          </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <h1>Busque Artigos Científicos</h1>
-        <form id="search-form">
-            <label for="query">Digite sua consulta:</label>
-            <input type="text" id="query" name="query" required>
-            <button type="submit">Buscar</button>
-        </form>
+    <div class="chat-container">
+        <div id="chat-window">
+            <!-- Mensagens do usuário e respostas da IA aparecerão aqui -->
+        </div>
 
-        <div id="results"></div>
+        <form id="search-form" class="chat-input">
+            <input type="text" id="query" name="query" placeholder="Digite sua consulta..." required>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 
     <script src="js/buscaArtigos.js"></script>

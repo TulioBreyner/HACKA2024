@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById('search-form');
     const queryInput = document.getElementById('query');
-    const resultsDiv = document.getElementById('results');
+    const chatWindow = document.getElementById('chat-window');
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Exibe a mensagem do usuário no chat (à direita)
+        addMessageToChat('user', query);
+
+        // Limpa o campo de entrada após o envio da mensagem
+        queryInput.value = '';
+
         try {
             const response = await fetch('http://localhost:5000/ask', {
                 method: 'POST',
@@ -23,34 +29,40 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             const articles = await response.json();
-            
-            // Limpa os resultados anteriores
-            resultsDiv.innerHTML = '';
 
-            // Se a resposta da API for uma lista de artigos
             if (Array.isArray(articles)) {
-                articles.forEach(article => {
-                    // Cria o card usando template literals para maior clareza
-                    const card = document.createElement('div');
-                    card.classList.add('result-card');
-
-                    card.innerHTML = `
+                articles.forEach((article) => {
+                    const resultMessage = `
                         <h3>${article.title || 'Título não encontrado'}</h3>
                         <p>Autor: ${article.author || 'Autor não encontrado'}</p>
                         <p>Ano de Publicação: ${article.year || 'Data não encontrada'}</p>
                         <a href="${article.link || '#'}" target="_blank">Ver Artigo</a>
                     `;
-
-                    // Adiciona o card aos resultados
-                    resultsDiv.appendChild(card);
+                    // Exibe a resposta do programa no chat (à esquerda)
+                    addMessageToChat('response', resultMessage);
                 });
             } else {
-                resultsDiv.innerHTML = `<p>Erro ao processar os dados. Por favor, tente novamente.</p>`;
+                addMessageToChat('response', 'Erro ao processar os dados. Por favor, tente novamente.');
             }
 
         } catch (error) {
             console.error('Erro ao buscar os artigos:', error);
-            resultsDiv.innerHTML = `<p>Erro ao buscar os artigos. Por favor, tente novamente.</p>`;
+            addMessageToChat('response', 'Erro ao buscar os artigos. Por favor, tente novamente.');
         }
     });
+
+    function addMessageToChat(type, content) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('chat-message', type === 'user' ? 'user-message' : 'response-message');
+
+        const messageBubble = document.createElement('div');
+        messageBubble.classList.add('message-bubble');
+        messageBubble.innerHTML = content;
+
+        messageDiv.appendChild(messageBubble);
+        chatWindow.appendChild(messageDiv);
+
+        // Faz scroll automático para a última mensagem
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
 });
