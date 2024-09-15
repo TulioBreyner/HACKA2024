@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busca de Artigos Científicos</title>
-    <link rel="stylesheet" href="CSS/buscaArtigos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca de Artigos Científicos</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="CSS/buscaArtigos.css">
+
 </head>
 <body>
 
-    <header>
-        <div class="header-container">
-          <div class="logo">
-            <img src="logo.png" alt="Logo do Site"> <!-- Substitua 'logo.png' pelo caminho da sua imagem de logo -->
-          </div>
-          <nav class="nav">
-            <a href="login.html" id="logout-link">Logout</a>
-          </nav>
+  <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="logoTeste.png" alt="Logo do Site"> <!-- Substitua 'logo.png' pelo caminho da sua imagem de logo -->
         </div>
-    </header>
+        <nav class="nav">
+          <a href="login.html" id="logout-link">Logout</a>
+        </nav>
+      </div>
+  </header>
 
-    <div class="chat-container">
-        <div id="chat-window">
-            <!-- Mensagens do usuário e respostas da IA aparecerão aqui -->
-        </div>
+  <div class="chat-container animate__animated animate__fadeInUp">
+      <div id="chat-window">
+          <!-- Mensagens do usuário e respostas da IA aparecerão aqui -->
+      </div>
 
-        <form id="search-form" class="chat-input">
-            <input type="text" id="query" name="query" placeholder="Digite sua consulta..." required>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+      <form id="search-form" class="chat-input">
+          <input type="text" id="query" name="query" placeholder="Digite sua consulta..." required>
+          <button type="submit">Enviar</button>
+      </form>
+  </div>
 
-    <script src="js/buscaArtigos.js"></script>
+  <script src="js/buscaArtigos.js"></script>
+
 </body>
 </html>

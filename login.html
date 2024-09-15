@@ -4,29 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="css/login.css">
+
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="logo.png" alt="Logo do Site"> <!-- Substitua 'logo.png' pelo caminho da sua imagem de logo -->
-      </div>
+  <div class="logo-container">
+    <div class="logo animate__animated animate__zoomIn">
+      <img src="logoTeste.png" alt="Logo do Site">
     </div>
-  </header>
-  <div class="login-container">
-    <h1>Login</h1>
+  </div>
+  <div class="login-container animate__animated animate__fadeInUp">
     <form id="login-form">
       <div class="form-group">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" placeholder="Usuário" required>
       </div>
       <div class="form-group">
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" placeholder="Senha" required>
+        <div class="forgot-password-container">
+          <a href="#" class="forgot-password">Esqueci minha senha</a>
+        </div>
       </div>
       <button type="submit">Entrar</button>
     </form>
+    
+    <div class="additional-options">
+      <button class="google-login">
+        <img src="G-google.png"> Google
+      </button>
+      <p>Não tem uma conta?
+        <a href="#" class="register">Cadastre-se</a>
+      </p>
+    </div>
+
+    <div class="terms-policy">
+      <a href="#" class="terms">Termos de Uso</a> | 
+      <a href="#" class="privacy">Política de Privacidade</a>
+    </div>
   </div>
   <script src="js/login.js"></script>
 </body>

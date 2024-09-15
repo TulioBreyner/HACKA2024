@@ -1,15 +1,17 @@
 /* Estilos globais */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Mukta", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
 }
 
 header {
-  background-color: #6200ea;
+  background-color: #0260c5;
   color: white;
-  padding: 20px 0;
+  padding: 5px 0;
 }
 
 .header-container {
@@ -18,7 +20,7 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .logo img {
@@ -41,7 +43,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     max-width: 90%;
-    height: 80vh;
+    height: 78vh;
     margin: 20px auto;
     background-color: white;
     border-radius: 8px;
