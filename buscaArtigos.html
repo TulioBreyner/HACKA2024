@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Artigos Científicos</title>
+    <link rel="stylesheet" href="CSS/buscaArtigos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SiteLogo</div>
+        <nav>
+            <a href="perfil.html">Perfil</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Busque Artigos Científicos</h1>
+        <form id="search-form">
+            <label for="query">Digite sua consulta:</label>
+            <input type="text" id="query" name="query" required>
+            <button type="submit">Buscar</button>
+        </form>
+
+        <div id="results"></div>
+    </div>
+
+    <script src="js/buscaArtigos.js"></script>
+</body>
+</html>
