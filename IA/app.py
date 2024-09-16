@@ -1,18 +1,19 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from scholarly import scholarly
 
+import database
+
 app = Flask(__name__)
 CORS(app)  # Habilitar CORS
+
 
 # Função para buscar artigos
 def search_articles(query):
     try:
         search_results = scholarly.search_pubs(query)
         articles = []
-        for i, result in enumerate(search_results):
-            if i >= 5:  # Limitar a 5 resultados
-                break
+        for result in search_results[:5]:
             article = {
                 'title': result.get('bib', {}).get('title', 'Título não encontrado'),
                 'author': result.get('bib', {}).get('author', 'Autor não encontrado'),
@@ -32,12 +33,14 @@ def search_articles(query):
 def ask():
     data = request.get_json()
     user_query = data.get('query', '')
+    print(user_query)
 
     if not user_query:
         return jsonify({'response': 'Nenhuma consulta foi fornecida.'}), 400
 
     # Buscar artigos baseados na consulta do usuário
-    articles = search_articles(user_query)
+    articles = database.search(user_query)
+    print(articles)
 
     # Retornar os artigos no formato desejado
     return jsonify(articles)

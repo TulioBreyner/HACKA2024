@@ -1,0 +1,140 @@
+/* login.css */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400&display=swap');
+
+body {
+  font-family: "Mukta", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.logo img {
+  height: 150px;
+  transition: transform 1s ease-in-out;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.move-logo {
+  transform: translateY(-300px);
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #ffffff57;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #888; /* Cor mais clara para o placeholder */
+  font-size: 16px; /* Tamanho da fonte do placeholder */
+}
+
+input:focus::placeholder {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-container {
+  text-align: right;
+  margin-top: 5px; /* Espaço entre o campo de senha e o link */
+}
+
+.forgot-password {
+  font-size: 14px; /* Tamanho pequeno do texto */
+  color: #6200ea; /* Cor do link */
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #3700b3;
+}
+
+/* Estilos adicionais para nova funcionalidade visual */
+
+.additional-options {
+  margin-top: 10px;
+}
+
+.additional-options button img {
+  width: 3%;
+}
+
+.additional-options a {
+  margin-top: 10px;
+  color: #6200ea;
+  text-decoration: none;
+}
+
+.additional-options a:hover {
+  text-decoration: underline;
+}
+
+.google-login {
+  background-color: white;
+  color: black;
+  border: 1px solid #db4437;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.google-login:hover {
+  background-color: #c33e2f6e;
+}
+
+.terms-policy {
+  margin-top: 80px;
+  font-size: 14px;
+}
+
+.terms-policy a {
+  color: #888;
+  text-decoration: none;
+}
+
+.terms-policy a:hover {
+  text-decoration: underline;
+}
